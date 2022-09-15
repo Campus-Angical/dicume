@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:dicume/core/failures.dart';
+import 'package:dicume/core/failures/failures.dart';
 import 'package:dicume/domain/entities/receita.dart';
 
 class ReceitaRepository {

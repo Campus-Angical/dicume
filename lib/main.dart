@@ -1,6 +1,6 @@
-import 'package:dicume/getx/bindings.dart';
-import 'package:dicume/presentation/pages/home_page.dart';
+import 'package:dicume/core/getx/bindings.dart';
 import 'package:flutter/material.dart';
+import 'package:dicume/presentation/pages/home_page.dart';
 import 'package:get/get.dart';
 
 void main() {

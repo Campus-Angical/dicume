@@ -5,40 +5,41 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends GetWidget<HomeCtrl> {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dicumê"),
-        backgroundColor: Color.fromARGB(255, 118, 196, 16),
+        backgroundColor: const Color.fromARGB(255, 118, 196, 16),
+        title: const Text("Dicumê"),
       ),
-      body: SingleChildScrollView(
-        child: Obx(() {
-          if (controller.state is HomeLoadedState) {
-            HomeLoadedState state = controller.state as HomeLoadedState;
-            return Column(
+      body: Obx(() {
+        if (controller.state is HomeLoadedState) {
+          HomeLoadedState state = controller.state as HomeLoadedState;
+          return SingleChildScrollView(
+            child: Column(
               children: _buildList(state.receitas),
-            );
-          }
+            ),
+          );
+        }
 
-          if (controller.state is HomeFailureState) {
-            return Container(
-              child: Center(
-                child: Text('Pena, um erro!'),
-              ),
-            );
-          }
+        if (controller.state is HomeFailureState) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text('Pena, um erro!'),
+            ],
+          );
+        }
 
-          if (controller.state is HomeLoadingState) {
-            return const CircularProgressIndicator();
-          }
+        if (controller.state is HomeLoadingState) {
+          return _buildProgressLoading();
+        }
 
-          controller.search();
-          return const Center(child: CircularProgressIndicator());
-        }),
-      ),
+        controller.search();
+        return _buildProgressLoading();
+      }),
     );
   }
 
@@ -101,5 +102,18 @@ class HomePage extends GetWidget<HomeCtrl> {
       ));
     }
     return cards;
+  }
+
+  Widget _buildProgressLoading() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        Center(child: CircularProgressIndicator()),
+        SizedBox(
+          height: 10,
+        ),
+        Text('Carregando...')
+      ],
+    );
   }
 }
