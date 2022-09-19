@@ -49,6 +49,7 @@ class HomePage extends GetWidget<HomeCtrl> {
       cards.add(Padding(
         padding: const EdgeInsets.fromLTRB(15, 12, 15, 12),
         child: Card(
+          elevation: 10,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0)),
             color: Color.fromARGB(255, 223, 253, 198),

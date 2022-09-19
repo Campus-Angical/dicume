@@ -1,4 +1,5 @@
 import 'package:dicume/core/getx/bindings.dart';
+import 'package:dicume/presentation/pages/receita_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:dicume/presentation/pages/home_page.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       initialBinding: DependenciesBinding(),
-      home: HomePage(),
+      home: ReceitaDetailsPage(),
     );
   }
 }
