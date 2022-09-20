@@ -1,9 +1,6 @@
 import 'package:dicume/presentation/controllers/receita/receita_details_ctrl.dart';
-import 'package:dicume/presentation/states/receita_state.dart';
+import 'package:dicume/presentation/states/receita/receita_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class ReceitaDetailsPage extends GetWidget<ReceitaDetailsCtrl> {
@@ -11,7 +8,7 @@ class ReceitaDetailsPage extends GetWidget<ReceitaDetailsCtrl> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Obx(
+    return Scaffold(body: Obx(
       (() {
         if (controller.state is ReceitaLoadedState) {
           final state = controller.state as ReceitaLoadedState;

@@ -1,7 +1,6 @@
-import 'package:dicume/data/repositories/receita_repository.dart';
-import 'package:dicume/domain/usecases/list_receitas.dart';
 import 'package:dicume/presentation/states/home_state.dart';
 import 'package:get/get.dart';
+import 'package:dicume/domain/usecases/receita/list_receitas.dart';
 
 class HomeCtrl extends GetxController {
   final ListReceita _listReceita = Get.find();

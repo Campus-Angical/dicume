@@ -1,5 +1,5 @@
-import 'package:dicume/domain/usecases/get_receita.dart';
-import 'package:dicume/presentation/states/receita_state.dart';
+import 'package:dicume/domain/usecases/receita/get_receita.dart';
+import 'package:dicume/presentation/states/receita/receita_state.dart';
 import 'package:get/get.dart';
 
 class ReceitaDetailsCtrl extends GetxController {
