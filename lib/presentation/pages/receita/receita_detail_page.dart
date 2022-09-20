@@ -22,7 +22,7 @@ class ReceitaDetailsPage extends GetWidget<ReceitaDetailsCtrl> {
                 child: Column(
                   children: [
                     ListTile(
-                      trailing: Icon(Icons.save_alt_sharp),
+                   
                       title: Text(state.receita.nome),
                       leading: Icon(Icons.person),
                     ),
@@ -30,40 +30,26 @@ class ReceitaDetailsPage extends GetWidget<ReceitaDetailsCtrl> {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      state.receita.descricao,
-                      style: TextStyle(fontSize: 18),
-                    ),
+                   
                     SizedBox(
                       height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Icon(Icons.share,
-                            color: Color.fromARGB(255, 123, 128, 123)),
-                        Icon(
-                          Icons.comment,
-                          color: Color.fromARGB(255, 123, 128, 123),
+                        Chip(avatar: Icon(Icons.local_dining_rounded,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 30,), 
+                            
+                            label :
+                            Text("5 porções"), labelStyle: TextStyle(fontSize: 20),
+                            backgroundColor: Color.fromARGB(255, 223, 253, 198),
+                        ) ,
+                         Text(
+                          "#caju", style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold ),
+                          
                         ),
-                        Chip(
-                          avatar: Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                          ),
-                          backgroundColor: Color.fromARGB(255, 223, 253, 198),
-                          label: Text("${state.receita.estrelas}"),
-                        ),
-                        Chip(
-                          avatar: Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                          ),
-                          backgroundColor: Color.fromARGB(255, 223, 253, 198),
-                          label: Text("${state.receita.likes}"),
-                        ),
-                      ],
-                    )
+                   ] ),
                   ],
                 )),
           );
